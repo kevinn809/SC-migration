@@ -9,12 +9,12 @@ function mostrarFormulario(tipo) {
     }
 }
 
-function cerrarFormulario() {
+function closeForm() {
     document.querySelectorAll('.formulario').forEach(f => f.style.display = 'none');
 }
 
 // Registrar producto
-function registrarProducto() {
+function registerProduct() {
     let nombre = document.getElementById('nombre').value;
     let precio = document.getElementById('precio').value;
     let cantidad = document.getElementById('cantidad').value;
@@ -27,7 +27,7 @@ function registrarProducto() {
         .then(res => res.json())
         .then(data => {
             alert(data.message);
-            cerrarFormulario();
+            closeForm();
         });
     } else {
         alert('Por favor, complete todos los campos.');
@@ -35,7 +35,7 @@ function registrarProducto() {
 }
 
 // Consultar productos
-function consultarProductos() {
+function consultProduct() {
     fetch('/consultarProducto')
         .then(res => res.json())
         .then(data => {
@@ -54,7 +54,7 @@ function consultarProductos() {
 }
 
 // Eliminar producto
-function eliminarProducto() {
+function deletProduct() {
     let ID = prompt("Ingrese el ID del producto que desea eliminar:");
     if (ID) {
         fetch('/eliminarProducto', {
@@ -72,4 +72,4 @@ function eliminarProducto() {
 // Generar reporte (puede personalizarse)
 function generarReporte() {
     window.print();
-}
+}º
