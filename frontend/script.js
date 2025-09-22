@@ -20,9 +20,13 @@ function registerProduct() {
     let cantidad = document.getElementById('cantidad').value;
 
     if (nombre && precio && cantidad) {
-        fetch('/registrarProducto', {
+        fetch('/registerProduct', {
             method: 'POST',
-            body: new URLSearchParams({ nombre, precio, cantidad })
+            body: new URLSearchParams({ 
+                nombre: String(nombre), 
+                precio: String(precio), 
+                cantidad: String(cantidad) 
+            })
         })
         .then(res => res.json())
         .then(data => {
@@ -34,9 +38,10 @@ function registerProduct() {
     }
 }
 
+
 // Consultar productos
 function consultProduct() {
-    fetch('/consultarProducto')
+    fetch('/mostrarProductos')
         .then(res => res.json())
         .then(data => {
             let tbody = document.getElementById('productosTable').getElementsByTagName('tbody')[0];
@@ -73,3 +78,12 @@ function deletProduct() {
 function generarReporte() {
     window.print();
 }º
+
+
+// ...existing code...
+function consultarProductos() {
+    // Aquí iría el código para consultar y mostrar productos
+    console.log("Función consultarProductos llamada");
+}
+// ...existing code...
+// filepath: frontend/script.js
