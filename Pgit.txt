@@ -1,0 +1,23 @@
+1 - crear repositorio en GitHub
+
+cd ruta-de-la-carpeta
+git add .
+git commit -m "Primer commit"
+git remote add origin https://github.com/usuario/proyecto.git
+git branch -M main
+git push -u origin main
+
+2 - Clonar
+
+git clone https://github.com/usuario/proyecto.git
+cd proyeto
+git remote -v
+
+3 - Actualizar
+
+cd ruta-proyecto
+git status
+git add .
+git commit -m "Descripción de los cambios"
+git push origin main
+
